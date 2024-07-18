@@ -30,6 +30,10 @@ li {
 }
 a {
   text-decoration: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
 }
 a:hover {
   color: #404bbf;
@@ -67,6 +71,7 @@ button:focus {
 .genel {
   background-color: #ffffff;
 }
+
 /* general settings */
 
 /* header section */
@@ -82,6 +87,8 @@ button:focus {
 .header {
   border-bottom: 1px solid #e7e9fc;
   height: 72px;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .div-header {
   display: flex;
@@ -114,13 +121,39 @@ button:focus {
   letter-spacing: 0.02em;
   color: #2e2f42;
 }
+.liste {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 24px 0;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--navy-blue);
+  position: relative;
+}
+
+.studio-line {
+  position: relative;
+  color: var(--ocean);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.studio-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  background-color: var(--ocean);
+  border-radius: 2px;
+}
 .address {
   font-style: normal;
 }
 .contact {
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #434455;
+  color: var(--slate);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .logo-content {
   margin-right: 76px;
@@ -137,8 +170,17 @@ button:focus {
 
 /* slider section */
 .slider {
-  background-color: var(--navy-blue);
   padding: 188px 0;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office\ 1.jpg);
+  max-width: 1440px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .slider-title {
   max-width: 496px;
@@ -163,6 +205,7 @@ button:focus {
   line-height: 1.5;
   letter-spacing: 0.04em;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .section-div {
   display: flex;
@@ -188,6 +231,17 @@ button:focus {
 .content-li {
   border-radius: 0px 0px 4px 4px;
   width: calc((100% - 72px) / 4);
+}
+.content-svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--cloud);
+  border: 1px solid var(--light-slate);
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  margin-bottom: 8px;
 }
 .content-title {
   margin-bottom: 8px;
@@ -226,6 +280,8 @@ button:focus {
 .our-team-list-item {
   background-color: #ffffff;
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .our-team-employee {
   padding: 32px 0;
@@ -247,6 +303,42 @@ button:focus {
   letter-spacing: 0.02em;
   color: #434455;
 }
+.our-team-icon-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+.our-team-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  gap: 24px;
+  border-radius: 50%;
+  background-color: var(--iris);
+}
+.icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--iris);
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon-link:hover {
+  background-color: #404bbf;
+}
+.icon-link:focus {
+  background-color: #404bbf;
+}
+.svg-class {
+  fill: var(--cloud);
+}
+
 /* our team section end */
 
 /* our portfolio section */
@@ -311,15 +403,6 @@ button:focus {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--iris);
-}
-
-.liste {
-  font-weight: 500;
-  font-size: 16px;
-  padding: 24px 0;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--navy-blue);
 }
 
 .baslik-iki {
